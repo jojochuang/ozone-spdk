@@ -1,0 +1,49 @@
+# Git files
+.git
+.gitignore
+
+# Build artifacts
+*.o
+*.so
+*.a
+*.lo
+*.la
+
+# Executables
+hello_world/hello_bdev
+nvme/identify
+accel/module
+accel/driver
+
+# Object files
+passthru/*.o
+hello_world/*.o
+nvme/*.o
+accel/*.o
+
+# Libraries
+passthru/libpassthru_external.*
+nvme/libnvme_external.*
+accel/libaccel_external_*
+
+# Dependencies
+node_modules/
+dist/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Install directories
+install/
+
+# Documentation
+*.md
+LICENSE
