@@ -8,7 +8,7 @@ ENV LANG=en_US.UTF-8 \
     LC_ALL=en_US.UTF-8 \
     JAVA_HOME=/usr/lib/jvm/java-17-openjdk \
     MAVEN_HOME=/opt/maven \
-    PATH=$PATH:$MAVEN_HOME/bin
+    PATH=$PATH:/opt/maven/bin
 
 # Install EPEL repository for additional packages
 RUN dnf install -y epel-release && \
@@ -27,7 +27,6 @@ RUN dnf groupinstall -y "Development Tools" && \
     libtool \
     pkg-config \
     wget \
-    curl \
     which \
     findutils \
     diffutils \
