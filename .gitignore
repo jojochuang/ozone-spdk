@@ -1,0 +1,63 @@
+# Build artifacts
+*.o
+*.so
+*.a
+*.d
+*.lo
+*.la
+*.dylib
+*.dll
+*.exe
+
+# Compiled objects and libraries
+module/*.o
+lib/*.o
+test/*.o
+*.out
+
+# Build directories
+build/
+dist/
+.build/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Temporary files
+*.tmp
+*.bak
+*.log
+/tmp/
+
+# Test outputs
+test_results/
+coverage/
+*.gcov
+*.gcda
+*.gcno
+
+# Generated documentation
+docs/_build/
+docs/html/
+docs/latex/
+
+# Dependencies
+.deps/
+.libs/
+
+# Autotools
+autom4te.cache/
+config.log
+config.status
+configure
+Makefile.in
+aclocal.m4
+
+# Other
+*.orig
+*.rej
