@@ -16,7 +16,7 @@ RUN dnf install -y epel-release && \
 
 # Install build essentials and development tools
 RUN dnf groupinstall -y "Development Tools" && \
-    dnf install -y \
+    dnf install -y --allowerasing \
     git \
     gcc \
     gcc-c++ \
@@ -38,7 +38,9 @@ RUN dnf groupinstall -y "Development Tools" && \
 
 # Install SPDK prerequisites
 # Based on SPDK requirements: https://spdk.io/doc/getting_started.html
-RUN dnf install -y \
+RUN dnf install -y dnf-plugins-core && \
+    dnf config-manager --set-enabled crb && \
+    dnf install -y \
     libaio-devel \
     libiscsi-devel \
     libuuid-devel \
@@ -47,18 +49,16 @@ RUN dnf install -y \
     libnl3-devel \
     numactl-devel \
     CUnit-devel \
-    jansson-devel \
+    json-c-devel \
     ncurses-devel \
     libbsd-devel \
     libarchive-devel \
     fuse3-devel \
-    nasm \
-    meson \
-    ninja-build
+    nasm
 
 # Install Python packages needed for SPDK
 RUN pip3 install --upgrade pip && \
-    pip3 install pyelftools
+    pip3 install pyelftools meson ninja
 
 # Install Java 17 (OpenJDK)
 RUN dnf install -y java-17-openjdk java-17-openjdk-devel
